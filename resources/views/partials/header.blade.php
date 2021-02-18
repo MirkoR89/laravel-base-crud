@@ -1,6 +1,7 @@
 <header>
+  <div class="container">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">The BLOG</a>
+        <a class="navbar-brand" href="{{ route('home') }}">The BLOG</a>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item active">
@@ -15,4 +16,5 @@
           </ul>
         </div>
       </nav>
+  </div>
 </header>

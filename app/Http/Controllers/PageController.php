@@ -2,22 +2,25 @@
 
 namespace App\Http\Controllers;
 
+use App\Post;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
     public function index()
     {
-        return ('home');
+        return view('home');
     }
 
     public function about()
     {
-        return ('pages.about');
+        return view('pages.about');
     }
 
-    public function blog()
+    public function blog(Post $post)
     {
-        return ('pages.blog');
+        $posts = $post->all();
+        
+        return view('pages.blog');
     }
 }
