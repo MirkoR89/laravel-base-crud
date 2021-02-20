@@ -16,7 +16,8 @@
                 <th>ID</th>
                 <th>Title</th>
                 <th>Body</th>
-                <th></th>
+                <th>Created at</th>
+                <th>Updated at</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -26,6 +27,8 @@
                 <td>{{$post->id}}</td>
                 <td>{{$post->title}}</td>
                 <td>{{$post->body}}</td>
+                <td>{{$post->created_at}}</td>
+                <td>{{$post->updated_at}}</td>
                 <td>
                     <a href=" {{route('posts.show', ['post'=>$post->id] )}} ">
                         <button type="button" class="btn btn-primary">
@@ -43,12 +46,14 @@
                     </a>
                 </td>
                 <td>
-                    <a href="">
-                        <button type="button" class="btn btn-danger">
+                    <form action="{{route('posts.destroy', ['post'=> $post->id] )}}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger">
                             Delete
                             <i class="fas fa-trash"></i>
                         </button>
-                    </a>
+                    </form>
                 </td>
             </tr>
             @endforeach
