@@ -13,8 +13,12 @@
             <li class="nav-item">
               <a class="nav-link" href="{{ route('blog') }}">Blog</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="posts">Post</a>
+            </li>
           </ul>
         </div>
       </nav>
   </div>
 </header>
+<main>

@@ -16,6 +16,7 @@ class PostController extends Controller
     {
        $posts = Post::all();
        //dd($posts);
+       $posts = Post::latest()->get();
        return view('posts.index', compact('posts'));
     }
 
@@ -26,7 +27,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('posts.new_post');
     }
 
     /**
@@ -37,7 +38,14 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //dd(request('title'), request('body'));
+        $post = new Post;
+        $post->title = request('title');
+        $post->body = request('body');
+
+        $post->save();
+
+        return redirect()->route('posts.index');
     }
 
     /**
@@ -48,7 +56,7 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        //
+        return view('posts.show', compact('post'));
     }
 
     /**
@@ -59,7 +67,7 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+        return view('posts.edit', compact('post'));
     }
 
     /**

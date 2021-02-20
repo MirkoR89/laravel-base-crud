@@ -19,5 +19,5 @@ Route::get('about', 'PageController@about')->name('about');
 
 Route::get('blog', 'PageController@blog')->name('blog');
 
-Route::resource('post', 'PostController');
+Route::resource('posts', 'PostController');
 

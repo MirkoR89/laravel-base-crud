@@ -18,9 +18,7 @@ class PageController extends Controller
     }
 
     public function blog(Post $post)
-    {
-        $posts = $post->all();
-        
+    {   
         return view('pages.blog');
     }
 }
