@@ -1,6 +1,6 @@
 <header>
-  <div class="container">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light bg-info mb-5">
         <a class="navbar-brand" href="{{ route('home') }}">The BLOG</a>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
@@ -14,7 +14,7 @@
               <a class="nav-link" href="{{ route('blog') }}">Blog</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="posts">Post</a>
+              <a class="nav-link" href=" {{route('posts.index')}} ">Post</a>
             </li>
           </ul>
         </div>
